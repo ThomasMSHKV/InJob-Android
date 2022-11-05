@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/screenSplash"
     android:background="@color/white">
 
@@ -9,33 +10,39 @@
     <ImageView
         android:layout_width="300dp"
         android:layout_height="300dp"
-        android:textColor="@color/white"
-        android:layout_marginBottom="32dp"
         android:src="@drawable/injob"
-        android:textSize="80sp"
-        android:layout_gravity="center_horizontal"
-        android:fontFamily="sans-serif-thin"/>
+        android:layout_marginBottom="32dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView
+        android:id="@+id/gerbRi"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:textColor="@color/white"
         android:src="@drawable/ingushetia"
-        android:textSize="80sp"
-        android:layout_gravity="center"
-        android:fontFamily="sans-serif-thin"/>
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="500dp"
+        app:layout_constraintBottom_toTopOf="@id/SplashText" />
 
     <TextView
+        android:id="@+id/SplashText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="МИНИСТЕРСТВО ПРОМЫШЛЕННОСТИ И ЦИФРОВОГО РАЗВИТИЯ РЕСПУБЛИКИ ИНГУШЕТИЯ"
-        android:textColor="@color/black"
-        android:textStyle="bold"
-        android:layout_marginBottom="32dp"
-        android:textAlignment="center"
-        android:textSize="20sp"
         android:layout_gravity="center|bottom"
-        android:fontFamily="sans-serif-thin"/>
+        android:fontFamily="sans-serif-thin"
+        android:text="МИНИСТЕРСТВО ПРОМЫШЛЕННОСТИ И ЦИФРОВОГО РАЗВИТИЯ РЕСПУБЛИКИ ИНГУШЕТИЯ"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:layout_marginBottom="20dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 
-</FrameLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
