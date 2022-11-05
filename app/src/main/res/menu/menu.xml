@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
-
     <item android:id="@+id/searchFragment"
         android:title="поиск"
         android:enabled="true"
@@ -14,6 +13,17 @@
         android:iconTint="@color/black"
         android:icon="@drawable/ic_heart" />
 
+    <item android:id="@+id/addPostFragment"
+        android:title="добавить"
+        android:enabled="true"
+        android:iconTint="@color/black"
+        android:icon="@drawable/ic_add_post" />
+
+    <item android:id="@+id/responsesFragment"
+        android:title="отклики"
+        android:enabled="true"
+        android:iconTint="@color/black"
+        android:icon="@drawable/ic_responses" />
 
     <item android:id="@+id/profileFragment"
         android:title="профиль"
