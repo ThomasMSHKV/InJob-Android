@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     app:cardCornerRadius="20dp"
-
+    android:backgroundTint="@color/gray"
     app:cardElevation="3dp"
     android:layout_margin="15dp"
     android:foreground="?selectableItemBackground"
