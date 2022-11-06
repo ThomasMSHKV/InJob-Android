@@ -27,7 +27,7 @@
             android:layout_width="120dp"
             android:layout_height="120dp"
             android:src="@drawable/avatar"
-            app:civ_border_width="2dp"
+            app:civ_border_width="4dp"
             app:civ_border_color="#FF000000"/>
 
 
@@ -73,15 +73,17 @@
         android:layout_height="60dp"
         android:textStyle="bold"
         android:text="@string/settings"
-        android:drawableEnd="@drawable/ic_responses"
-        android:paddingEnd="20dp"
-        android:paddingStart="20dp"
+        android:drawableStart="@drawable/ic_settings"
+        android:paddingStart="10dp"
+        android:textAlignment="textStart"
         android:textSize="16sp"
         android:textColor="@color/black"
-        android:background="@drawable/search_back"
+        android:background="@drawable/profile_btn_back"
         android:layout_marginTop="32dp"
+        android:drawableEnd="@drawable/ic_arrow_right"
+        android:layout_marginStart="20dp"
+        android:paddingEnd="10dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/profileLinear"/>
 
 
@@ -91,15 +93,17 @@
         android:layout_height="60dp"
         android:textStyle="bold"
         android:text="@string/my_ads"
-        android:paddingStart="20dp"
-        android:drawableEnd="@drawable/ic_add_post"
-        android:paddingEnd="20dp"
+        android:paddingStart="10dp"
+        android:drawableEnd="@drawable/ic_arrow_right"
+        android:textAlignment="textStart"
+        android:drawableStart="@drawable/ic_responses"
+        android:paddingEnd="10dp"
         android:textSize="16sp"
         android:textColor="@color/black"
-        android:background="@drawable/search_back"
-        android:layout_marginTop="32dp"
+        android:background="@drawable/profile_btn_back"
+        android:layout_marginTop="22dp"
+        android:layout_marginStart="20dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/profile_settings" />
 
 
