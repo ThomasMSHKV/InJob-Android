@@ -4,4 +4,11 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="settings">   Настройки</string>
     <string name="my_ads">   Мои объявления</string>
+
+    <string name="tv_category_name_ads_screen_label">Название / категория</string>
+    <string name="tv_description_ads_screen_label">Описание</string>
+    <string name="tv_location_ads_screen_label">Локация</string>
+    <string name="tv_payment_ads_screen_label">Оплата</string>
+    <string name="btn_add_ads_screen_label">Добавить объявление</string>
+
 </resources>
