@@ -9,7 +9,7 @@
     <string name="tv_description_ads_screen_label">Описание</string>
     <string name="tv_location_ads_screen_label">Локация</string>
     <string name="tv_payment_ads_screen_label">Оплата</string>
-    <string name="btn_add_ads_screen_label">Добавить объявление</string>
-    <string name="minfin_splashscreen">МИНИСТЕРСТВО ПРОМЫШЛЕННОСТИ И ЦИФРОВОГО РАЗВИТИЯ РЕСПУБЛИКИ ИНГУШЕТИЯ</string>
+    <string name="btn_add_ad_ads_screen_label">Добавить объявление</string>
+    <string name="btn_add_picture_ads_screen_label">Добавить фото</string>
 
 </resources>

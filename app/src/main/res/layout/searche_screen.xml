@@ -19,7 +19,7 @@
       android:drawableEnd="@drawable/ic_search"
       android:paddingEnd="20dp"
       android:textColor="@color/black"
-      android:textColorHint="@color/graydark"
+      android:textColorHint="@color/dark_grey"
       app:layout_constraintStart_toEndOf="parent"
       app:layout_constraintTop_toTopOf="parent"
       app:layout_constraintEnd_toEndOf="parent"
