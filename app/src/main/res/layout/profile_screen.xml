@@ -70,7 +70,7 @@
     <Button
         android:id="@+id/profile_settings"
         android:layout_width="300dp"
-        android:layout_height="60dp"
+        android:layout_height="40dp"
         android:textStyle="bold"
         android:text="@string/settings"
         android:drawableStart="@drawable/ic_settings"
@@ -90,7 +90,7 @@
     <Button
         android:id="@+id/profile_ads"
         android:layout_width="300dp"
-        android:layout_height="60dp"
+        android:layout_height="40dp"
         android:textStyle="bold"
         android:text="@string/my_ads"
         android:paddingStart="10dp"
