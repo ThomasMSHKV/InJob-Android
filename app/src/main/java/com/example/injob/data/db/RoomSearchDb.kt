@@ -1,14 +1,14 @@
-package com.example.injob.db
+package com.example.injob.data.db
 
 import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 
-@Database(entities = [AdsEntity::class], version = 1)
-abstract class RoomSearchDb : RoomDatabase {
+@Database(entities = [AdEntity::class], version = 1)
+abstract class RoomSearchDb : RoomDatabase() {
 
-    abstract fun adsDao(): AdsDao?
+    abstract fun adDao(): AdDao?
 
     companion object {
         private var INSTANCE: RoomSearchDb? = null

@@ -43,9 +43,7 @@
         android:layout_marginEnd="10dp"
         android:layout_marginTop="5dp"
         android:textColor="@color/black"
-        android:textSize="16sp"
-        />
-
+        android:textSize="16sp"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -72,10 +70,7 @@
             android:textColor="@color/black"
             android:textSize="16sp"/>
 
-
-
     </LinearLayout>
-
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -102,10 +97,7 @@
             android:textColor="@color/black"
             android:textSize="16sp"/>
 
-
-
     </LinearLayout>
-
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -122,8 +114,6 @@
             android:textColor="@color/black"
             android:textSize="16sp"/>
 
-
-
         <Button
             android:id="@+id/react_btn"
             android:layout_width="150dp"
@@ -134,7 +124,6 @@
             android:textColor="@color/white"
             android:textSize="16sp"/>
 
-
         <Button
             android:id="@+id/responded_btn"
             android:layout_width="150dp"
@@ -142,20 +131,10 @@
             android:text="откликнуто"
             android:layout_margin="20dp"
             android:visibility="gone"
-            android:background="@drawable/response_btn_back"
+            android:background="@drawable/responded_btn_back"
             android:textColor="@color/white"
             android:textSize="16sp"/>
 
-
-
-
     </LinearLayout>
-
-
 </LinearLayout>
-
-
-
-
-
 </androidx.cardview.widget.CardView>
