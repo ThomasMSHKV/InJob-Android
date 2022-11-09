@@ -8,6 +8,7 @@ import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.widget.doOnTextChanged
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModelProvider
 import coil.load
 import com.example.injob.R
@@ -34,7 +35,7 @@ class AdsScreen : Fragment() {
         return binding.root
     }
 
-    private var viewModel = ViewModelProvider(requireActivity())[AdsViewModel::class.java]
+    private val viewModel by viewModels<AdsViewModel>()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         setFieldsChecking()
