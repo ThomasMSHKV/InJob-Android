@@ -4,8 +4,10 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.activity.result.ActivityResult
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.core.app.ActivityCompat
 import androidx.core.widget.doOnTextChanged
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
@@ -47,7 +49,7 @@ class AdsScreen : Fragment() {
             && binding.ivPicturePlaceholder.drawable != null
         ) {
 
-            binding.btnAddAd.setBackgroundColor(requireContext().getColor(R.color.black))
+            binding.btnAddAd.background = context?.let { ActivityCompat.getDrawable(it, R.drawable.btn_add_ad_ads_screen_active_background) }
             binding.btnAddAd.isClickable = true
         }
     }

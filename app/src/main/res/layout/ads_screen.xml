@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:background="@color/white"
     android:scrollbars="vertical"
     tools:context=".ui.ads.AdsScreen">
@@ -40,7 +40,7 @@
             android:layout_width="match_parent"
             android:layout_height="36dp"
             android:layout_marginHorizontal="16dp"
-            android:background="@drawable/btn_add_ad_ads_screen_background"
+            android:background="@drawable/btn_add_ad_ads_screen_inactive_background"
             android:backgroundTint="@color/black"
             android:text="@string/btn_add_picture_ads_screen_label"
             android:textAllCaps="false"
@@ -129,6 +129,7 @@
             android:layout_height="30dp"
             android:layout_marginHorizontal="16dp"
             android:layout_marginTop="8dp"
+            android:paddingStart="10dp"
             android:background="@drawable/edittext_ads_screen_background"
             android:textColor="@color/black"
             app:layout_constraintEnd_toEndOf="parent"
@@ -156,6 +157,7 @@
             android:layout_height="30dp"
             android:layout_marginHorizontal="16dp"
             android:layout_marginTop="8dp"
+            android:paddingStart="10dp"
             android:background="@drawable/edittext_ads_screen_background"
             android:textColor="@color/black"
             app:layout_constraintEnd_toEndOf="parent"
@@ -168,7 +170,7 @@
             android:layout_height="36dp"
             android:layout_marginHorizontal="16dp"
             android:layout_marginTop="32dp"
-            android:background="@drawable/btn_add_ad_ads_screen_background"
+            android:background="@drawable/btn_add_ad_ads_screen_inactive_background"
             android:backgroundTint="@color/dark_grey"
             android:clickable="false"
             android:text="@string/btn_add_ad_ads_screen_label"
@@ -178,7 +180,15 @@
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/etPayment" />
+            app:layout_constraintTop_toBottomOf="@id/etPayment"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btn_add_ad"/>
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
