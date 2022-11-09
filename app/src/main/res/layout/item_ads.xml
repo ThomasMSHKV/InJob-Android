@@ -8,133 +8,134 @@
     android:layout_margin="15dp"
     android:foreground="?selectableItemBackground"
     android:clickable="true"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
-
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="vertical">
-
-    <ImageView
-        android:id="@+id/item_image"
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:src="@drawable/maxresdefault"
-        android:scaleType="centerCrop"/>
-
-    <TextView
-        android:id="@+id/item_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Вспахать огород"
-        android:textColor="@color/black"
-        android:textStyle="bold"
-        android:textSize="24sp"
-        android:layout_marginTop="10dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginEnd="10dp"/>
-    
-    <TextView
-        android:id="@+id/item_description"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Нужно вспахать огород, земля 5 соток, все инстументы имеются"
-        android:layout_marginStart="10dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginTop="5dp"
-        android:textColor="@color/black"
-        android:textSize="16sp"/>
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:focusable="true">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/item_image"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/maxresdefault" />
 
         <TextView
+            android:id="@+id/item_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="оплата:"
-            android:layout_marginTop="10dp"
             android:layout_marginStart="10dp"
-            android:layout_marginEnd="10dp"
-            android:textColor="@color/black"
-            android:textSize="16sp"/>
-
-        <TextView
-            android:id="@+id/item_payment"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="4.000"
             android:layout_marginTop="10dp"
             android:layout_marginEnd="10dp"
+            android:text="Вспахать огород"
             android:textColor="@color/black"
-            android:textSize="16sp"/>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
+            android:textSize="24sp"
+            android:textStyle="bold" />
 
         <TextView
-            android:layout_width="wrap_content"
+            android:id="@+id/item_description"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="локация:"
-            android:layout_marginTop="10dp"
             android:layout_marginStart="10dp"
+            android:layout_marginTop="5dp"
             android:layout_marginEnd="10dp"
+            android:text="Нужно вспахать огород, земля 5 соток, все инстументы имеются"
             android:textColor="@color/black"
-            android:textSize="16sp"/>
+            android:textSize="16sp" />
 
-        <TextView
-            android:id="@+id/item_location"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Назрань"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="10dp"
-            android:textColor="@color/black"
-            android:textSize="16sp"/>
+            android:orientation="horizontal">
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:text="оплата:"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/item_payment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:text="4.000"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:text="локация:"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/item_location"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:text="Назрань"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/contacts_btn"
+                android:layout_width="150dp"
+                android:layout_height="40dp"
+                android:layout_margin="20dp"
+                android:background="@drawable/contacts_btn_back"
+                android:text="контакты"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
+
+            <Button
+                android:id="@+id/react_btn"
+                android:layout_width="150dp"
+                android:layout_height="40dp"
+                android:layout_margin="20dp"
+                android:background="@drawable/response_btn_back"
+                android:text="откликнуться"
+                android:textColor="@color/white"
+                android:textSize="16sp" />
+
+            <Button
+                android:id="@+id/responded_btn"
+                android:layout_width="150dp"
+                android:layout_height="40dp"
+                android:layout_margin="20dp"
+                android:background="@drawable/responded_btn_back"
+                android:text="откликнуто"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:visibility="gone" />
+
+        </LinearLayout>
     </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <Button
-            android:id="@+id/contacts_btn"
-            android:layout_width="150dp"
-            android:layout_height="40dp"
-            android:text="контакты"
-            android:layout_margin="20dp"
-            android:background="@drawable/contacts_btn_back"
-            android:textColor="@color/black"
-            android:textSize="16sp"/>
-
-        <Button
-            android:id="@+id/react_btn"
-            android:layout_width="150dp"
-            android:layout_height="40dp"
-            android:text="откликнуться"
-            android:layout_margin="20dp"
-            android:background="@drawable/response_btn_back"
-            android:textColor="@color/white"
-            android:textSize="16sp"/>
-
-        <Button
-            android:id="@+id/responded_btn"
-            android:layout_width="150dp"
-            android:layout_height="40dp"
-            android:text="откликнуто"
-            android:layout_margin="20dp"
-            android:visibility="gone"
-            android:background="@drawable/responded_btn_back"
-            android:textColor="@color/white"
-            android:textSize="16sp"/>
-
-    </LinearLayout>
-</LinearLayout>
 </androidx.cardview.widget.CardView>

@@ -10,7 +10,7 @@ import androidx.room.Update
 interface AdDao {
 
     @Query("SELECT * FROM searchinfo ORDER BY id DESC")
-    fun getAllAdsInfo(): List<AdEntity>?
+    fun getAllAds(): List<AdEntity>?
 
     @Insert
     fun insertAd(ads: AdEntity?)

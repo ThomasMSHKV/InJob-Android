@@ -11,5 +11,6 @@
     <string name="tv_payment_ads_screen_label">Оплата</string>
     <string name="btn_add_ad_ads_screen_label">Добавить объявление</string>
     <string name="btn_add_picture_ads_screen_label">Добавить фото</string>
+    <string name="min_fin">МИНИСТЕРСТВО ПРОМЫШЛЕННОСТИ И ЦИФРОВОГО РАЗВИТИЯ РЕСПУБЛИКИ ИНГУШЕТИЯ</string>
 
 </resources>

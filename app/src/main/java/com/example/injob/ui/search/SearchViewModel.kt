@@ -8,11 +8,11 @@ import com.example.injob.data.db.RoomSearchDb
 
 class SearchViewModel(app: Application) : AndroidViewModel(app) {
 
-    var allAds: MutableLiveData<List<AdEntity>> = MutableLiveData()
+    var allAds: MutableLiveData<List<AdEntity>?> = MutableLiveData()
 
     fun getAllAds() {
         val adsDao = RoomSearchDb.getAppDatabase((getApplication()))?.adDao()
-        val list = adsDao?.getAllAdsInfo()
+        val list = adsDao?.getAllAds()
 
         allAds.value = list
     }
