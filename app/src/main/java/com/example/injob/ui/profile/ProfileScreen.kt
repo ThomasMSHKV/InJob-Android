@@ -10,7 +10,6 @@ import com.example.injob.R
 
 class ProfileScreen : Fragment() {
 
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?

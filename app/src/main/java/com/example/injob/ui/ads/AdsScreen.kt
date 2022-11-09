@@ -13,16 +13,14 @@ import coil.load
 import com.example.injob.R
 import com.example.injob.data.db.AdEntity
 import com.example.injob.databinding.AdsScreenBinding
-import com.example.injob.databinding.SearcheScreenBinding
 import com.example.injob.utils.constans.Constans.Companion.MIMETYPE_IMAGES
-import kotlinx.android.synthetic.main.ads_screen.*
 
 class AdsScreen : Fragment() {
 
     private var _binding: AdsScreenBinding? = null
     private val binding get() = _binding!!
 
-    private val picImage: ActivityResultLauncher<String> =
+    private val pickImage: ActivityResultLauncher<String> =
         registerForActivityResult(ActivityResultContracts.GetContent()) { contentUri ->
             binding.ivPicturePlaceholder.load(contentUri)
         }
@@ -30,60 +28,58 @@ class AdsScreen : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        _binding = AdsScreenBinding.inflate(layoutInflater, container, false)
+    ): View {
+        _binding = AdsScreenBinding.inflate(inflater, container, false)
+
         return binding.root
-
     }
-    private var viewModel = ViewModelProvider(this)[AdsViewModel::class.java]
 
+    private var viewModel = ViewModelProvider(requireActivity())[AdsViewModel::class.java]
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         setFieldsChecking()
         setClickListeners()
-        binding.btnAddPicture.setOnClickListener {
-            picImage.launch(MIMETYPE_IMAGES)
-        }
     }
 
-
     private fun checkFieldsBeforeActivatingButton() {
-        if (etTitleName.text.isNotBlank() && etDescription.text.isNotBlank() &&
-            etLocation.text.isNotBlank() && etPayment.text.isNotBlank()
-            && iv_picture_placeholder.drawable != null
+        if (binding.etTitleName.text.isNotBlank() && binding.etDescription.text.isNotBlank() &&
+            binding.etLocation.text.isNotBlank() && binding.etPayment.text.isNotBlank()
+            && binding.ivPicturePlaceholder.drawable != null
         ) {
 
-            btn_add_ad.setBackgroundColor(requireContext().getColor(R.color.black))
-            btn_add_ad.isClickable = true
+            binding.btnAddAd.setBackgroundColor(requireContext().getColor(R.color.black))
+            binding.btnAddAd.isClickable = true
         }
     }
 
     private fun setFieldsChecking() {
-        etTitleName.doOnTextChanged { text, start, before, count ->
+        binding.etTitleName.doOnTextChanged { text, start, before, count ->
             checkFieldsBeforeActivatingButton()
         }
-        etDescription.doOnTextChanged { text, start, before, count ->
+        binding.etDescription.doOnTextChanged { text, start, before, count ->
             checkFieldsBeforeActivatingButton()
         }
-        etLocation.doOnTextChanged { text, start, before, count ->
+        binding.etLocation.doOnTextChanged { text, start, before, count ->
             checkFieldsBeforeActivatingButton()
         }
-        etPayment.doOnTextChanged { text, start, before, count ->
+        binding.etPayment.doOnTextChanged { text, start, before, count ->
             checkFieldsBeforeActivatingButton()
         }
     }
 
     private fun setClickListeners() {
-        btn_add_ad.setOnClickListener {
+        binding.btnAddAd.setOnClickListener {
             val adEntity = AdEntity(
-                title = etTitleName.text.toString(),
-                description = etDescription.text.toString(),
-                payment = etPayment.text.toString(),
-                location = etLocation.text.toString(),
-                image = btn_add_picture.toString()
-
+                title = binding.etTitleName.text.toString(),
+                description = binding.etDescription.text.toString(),
+                payment = binding.etPayment.text.toString(),
+                location = binding.etLocation.text.toString(),
+                image = binding.btnAddPicture.toString()
             )
             viewModel.insertAd(adEntity)
+        }
+        binding.btnAddPicture.setOnClickListener {
+            pickImage.launch(MIMETYPE_IMAGES)
         }
     }
 }

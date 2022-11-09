@@ -36,12 +36,10 @@ class MainActivity : AppCompatActivity() {
                 R.id.profileFragment -> changeFragment(ProfileScreen())
                 R.id.addPostFragment -> changeFragment(AdsScreen())
                 R.id.responsesFragment -> changeFragment(ResponseScreen())
-
             }
             true
         }
     }
-
 
     private fun changeFragment(fragment: Fragment) {
         supportFragmentManager.beginTransaction().apply {
@@ -50,10 +48,8 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-
     override fun onDestroy() {
         super.onDestroy()
         binding = null
     }
-
 }

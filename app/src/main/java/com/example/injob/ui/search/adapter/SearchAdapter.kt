@@ -4,9 +4,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.injob.R
 import com.example.injob.data.db.AdEntity
-import kotlinx.android.synthetic.main.item_ads.view.*
+import com.example.injob.databinding.ItemAdsBinding
 
 class SearchAdapter() : RecyclerView.Adapter<SearchAdapter.SearchViewHolder>() {
 
@@ -17,15 +16,16 @@ class SearchAdapter() : RecyclerView.Adapter<SearchAdapter.SearchViewHolder>() {
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SearchViewHolder {
-        val inflater = LayoutInflater.from(parent.context).inflate(R.layout.item_ads, parent, false)
-        return SearchViewHolder(inflater)
+        return SearchViewHolder(
+            ItemAdsBinding
+                .inflate(LayoutInflater.from(parent.context), parent, false)
+        )
     }
 
     override fun onBindViewHolder(holder: SearchViewHolder, position: Int) {
-
-        holder.reactBtn.setOnClickListener {
-            holder.reactBtn.visibility = View.GONE
-            holder.respondedBtn.visibility = View.VISIBLE
+        holder.binding.reactBtn.setOnClickListener {
+            holder.binding.reactBtn.visibility = View.GONE
+            holder.binding.respondedBtn.visibility = View.VISIBLE
         }
         holder.bind(listOfAds[position])
     }
@@ -34,24 +34,22 @@ class SearchAdapter() : RecyclerView.Adapter<SearchAdapter.SearchViewHolder>() {
         return listOfAds.size
     }
 
-    class SearchViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+    class SearchViewHolder(val binding: ItemAdsBinding) : RecyclerView.ViewHolder(binding.root) {
 
-        val tvTitle = view.item_title
-        val tvDescription = view.item_description
-        val tvPayment = view.item_payment
-        val tvLocation = view.item_location
-        val tvImage = view.item_image
-        val reactBtn = view.react_btn
-        val contactsBtn = view.contacts_btn
-        val respondedBtn = view.responded_btn
+        private val tvTitle = binding.itemTitle
+        private val tvDescription = binding.itemDescription
+        private val tvPayment = binding.itemPayment
+        private val tvLocation = binding.itemLocation
+        private val tvImage = binding.itemImage
+        private val reactBtn = binding.reactBtn
+        private val contactsBtn = binding.contactsBtn
+        private val respondedBtn = binding.respondedBtn
 
         fun bind(data: AdEntity) {
             tvTitle.text = data.title
             tvDescription.text = data.description
             tvPayment.text = data.payment
             tvLocation.text = data.location
-
-
         }
     }
 }
