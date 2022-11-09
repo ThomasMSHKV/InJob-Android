@@ -9,12 +9,11 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.widget.doOnTextChanged
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.ViewModelProvider
 import coil.load
 import com.example.injob.R
 import com.example.injob.data.db.AdEntity
 import com.example.injob.databinding.AdsScreenBinding
-import com.example.injob.utils.constans.Constans.Companion.MIMETYPE_IMAGES
+import com.example.injob.utils.constans.Constans.MIMETYPE_IMAGES
 
 class AdsScreen : Fragment() {
 
