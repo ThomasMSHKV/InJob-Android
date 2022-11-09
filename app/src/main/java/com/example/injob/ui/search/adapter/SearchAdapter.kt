@@ -1,9 +1,11 @@
 package com.example.injob.ui.search.adapter
 
+import android.net.Uri
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.example.injob.R
 import com.example.injob.data.db.AdEntity
 import com.example.injob.databinding.ItemAdsBinding
 
@@ -41,15 +43,13 @@ class SearchAdapter() : RecyclerView.Adapter<SearchAdapter.SearchViewHolder>() {
         private val tvPayment = binding.itemPayment
         private val tvLocation = binding.itemLocation
         private val tvImage = binding.itemImage
-        private val reactBtn = binding.reactBtn
-        private val contactsBtn = binding.contactsBtn
-        private val respondedBtn = binding.respondedBtn
 
         fun bind(data: AdEntity) {
             tvTitle.text = data.title
             tvDescription.text = data.description
             tvPayment.text = data.payment
             tvLocation.text = data.location
+            tvImage.setImageURI(Uri.parse(data.image))
         }
     }
 }
