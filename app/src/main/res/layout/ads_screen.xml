@@ -171,7 +171,6 @@
             android:layout_marginHorizontal="16dp"
             android:layout_marginTop="32dp"
             android:background="@drawable/btn_add_ad_ads_screen_inactive_background"
-            android:backgroundTint="@color/dark_grey"
             android:clickable="false"
             android:text="@string/btn_add_ad_ads_screen_label"
             android:textAllCaps="false"

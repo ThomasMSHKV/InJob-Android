@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.activity.result.ActivityResult
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.app.ActivityCompat
@@ -14,8 +13,13 @@ import androidx.fragment.app.viewModels
 import coil.load
 import com.example.injob.R
 import com.example.injob.data.db.AdEntity
+import com.example.injob.data.db.RoomSearchDb
 import com.example.injob.databinding.AdsScreenBinding
+import com.example.injob.ui.search.SearchScreen
+import com.example.injob.ui.search.viewmodel.SearchFactory
+import com.example.injob.ui.search.viewmodel.SearchViewModel
 import com.example.injob.utils.constans.Constans.MIMETYPE_IMAGES
+import com.example.injob.utils.extensions.navigateToFragment
 
 class AdsScreen : Fragment() {
 
@@ -36,7 +40,9 @@ class AdsScreen : Fragment() {
         return binding.root
     }
 
-    private val viewModel by viewModels<AdsViewModel>()
+    private val viewModel by viewModels<AdsViewModel> { AdsFactory(
+        RoomSearchDb.getAppDatabase(requireContext())?.adDao())
+    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         setFieldsChecking()
@@ -51,6 +57,7 @@ class AdsScreen : Fragment() {
 
             binding.btnAddAd.background = context?.let { ActivityCompat.getDrawable(it, R.drawable.btn_add_ad_ads_screen_active_background) }
             binding.btnAddAd.isClickable = true
+
         }
     }
 
@@ -79,6 +86,7 @@ class AdsScreen : Fragment() {
                 image = binding.btnAddPicture.toString()
             )
             viewModel.insertAd(adEntity)
+            requireActivity().supportFragmentManager.navigateToFragment(SearchScreen())
         }
         binding.btnAddPicture.setOnClickListener {
             pickImage.launch(MIMETYPE_IMAGES)

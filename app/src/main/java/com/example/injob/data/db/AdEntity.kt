@@ -7,7 +7,7 @@ import java.net.URI
 
 @Entity(tableName = "searchinfo")
 data class AdEntity(
-    @PrimaryKey(autoGenerate = true) @ColumnInfo(name = "id") val id : Int = 0 ,
+    @PrimaryKey(autoGenerate = true) @ColumnInfo(name = "id") val id : Long = 0 ,
     @ColumnInfo(name = "image") val image: String,
     @ColumnInfo(name = "title") val title: String,
     @ColumnInfo(name = "description") val description: String,

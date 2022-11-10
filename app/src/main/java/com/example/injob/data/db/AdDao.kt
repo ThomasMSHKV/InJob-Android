@@ -9,6 +9,9 @@ import androidx.room.Update
 @Dao
 interface AdDao {
 
+    @Query("SELECT * FROM searchinfo WHERE id = :id")
+    fun getAd(id: Long): AdEntity
+
     @Query("SELECT * FROM searchinfo ORDER BY id DESC")
     fun getAllAds(): List<AdEntity>?
 

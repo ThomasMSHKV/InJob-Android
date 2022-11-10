@@ -8,9 +8,6 @@
                 android:color="@color/black"/>
             <corners
                 android:radius="35dp"/>
-            <size
-                android:height="70dp"
-                android:width="300dp"/>
             <stroke
                 android:width="3dp"
                 android:color="@color/black"

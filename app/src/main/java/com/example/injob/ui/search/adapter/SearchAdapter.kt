@@ -1,6 +1,7 @@
 package com.example.injob.ui.search.adapter
 
 import android.net.Uri
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -8,12 +9,13 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.injob.R
 import com.example.injob.data.db.AdEntity
 import com.example.injob.databinding.ItemAdsBinding
+import com.google.android.material.bottomsheet.BottomSheetDialog
 
 class SearchAdapter() : RecyclerView.Adapter<SearchAdapter.SearchViewHolder>() {
 
-    var listOfAds = ArrayList<AdEntity>()
+    var listOfAds = listOf<AdEntity>()
 
-    fun setListData(data: ArrayList<AdEntity>) {
+    fun setListData(data: List<AdEntity>) {
         this.listOfAds = data
     }
 
@@ -29,6 +31,10 @@ class SearchAdapter() : RecyclerView.Adapter<SearchAdapter.SearchViewHolder>() {
             holder.binding.reactBtn.visibility = View.GONE
             holder.binding.respondedBtn.visibility = View.VISIBLE
         }
+        holder.binding.contactsBtn.setOnClickListener {
+
+        }
+
         holder.bind(listOfAds[position])
     }
 
@@ -49,6 +55,7 @@ class SearchAdapter() : RecyclerView.Adapter<SearchAdapter.SearchViewHolder>() {
             tvDescription.text = data.description
             tvPayment.text = data.payment
             tvLocation.text = data.location
+            Log.e("ERROR", data.image)
             tvImage.setImageURI(Uri.parse(data.image))
         }
     }

@@ -1,13 +1,21 @@
-package com.example.injob.ui.ads
+package com.example.injob.ui.search.viewmodel
 
 import androidx.lifecycle.ViewModel
 import com.example.injob.data.db.AdDao
 import com.example.injob.data.db.AdEntity
 import kotlinx.coroutines.*
 
-class AdsViewModel(private val adDao: AdDao) : ViewModel() {
+class SearchViewModel(private val adDao: AdDao) : ViewModel() {
 
-    fun getAllAds(adEntity: AdEntity): List<AdEntity>? {
+    fun getAd(id: Long): AdEntity {
+        val ads = CoroutineScope(Dispatchers.IO).async {
+            adDao.getAd(id)
+        }
+
+        return runBlocking { ads.await() }
+    }
+
+    fun getAllAds(): List<AdEntity>? {
         val ads = CoroutineScope(Dispatchers.IO).async {
             adDao.getAllAds()
         }

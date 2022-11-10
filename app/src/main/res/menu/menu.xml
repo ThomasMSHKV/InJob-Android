@@ -1,31 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item android:id="@+id/searchFragment"
-        android:title="поиск"
+        android:title="Поиск"
         android:enabled="true"
         android:iconTint="@color/black"
         android:icon="@drawable/ic_search" />
 
     <item android:id="@+id/favoriteFragment"
-        android:title="избранное"
+        android:title="Избранное"
         android:enabled="true"
         android:iconTint="@color/black"
         android:icon="@drawable/ic_heart" />
 
     <item android:id="@+id/addPostFragment"
-        android:title="добавить"
+        android:title="Добавить"
         android:enabled="true"
         android:iconTint="@color/black"
         android:icon="@drawable/ic_add_post" />
 
     <item android:id="@+id/responsesFragment"
-        android:title="отклики"
+        android:title="Отклики"
         android:enabled="true"
         android:iconTint="@color/black"
         android:icon="@drawable/ic_responses" />
 
     <item android:id="@+id/profileFragment"
-        android:title="профиль"
+        android:title="Профиль"
         android:enabled="true"
         android:iconTint="@color/black"
         android:icon="@drawable/ic_profile" />
