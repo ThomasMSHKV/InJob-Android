@@ -6,7 +6,7 @@ import android.os.Looper
 import android.view.View
 import androidx.fragment.app.Fragment
 import com.example.injob.R
-import com.example.injob.ui.search.SearchScreen
+import com.example.injob.ui.search.screen.SearchScreen
 import com.example.injob.utils.extensions.navigateToFragment
 
 class SplashScreen : Fragment(R.layout.splash_screen) {

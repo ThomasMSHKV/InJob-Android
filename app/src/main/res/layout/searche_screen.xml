@@ -5,7 +5,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/white"
     android:layout_height="match_parent"
-    tools:context=".ui.search.SearchScreen">
+    tools:context=".ui.search.screen.SearchScreen">
 
   <EditText
       android:id="@+id/search_edit"
@@ -29,12 +29,11 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerViewSearch"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         app:layout_constraintVertical_bias="0"
         tools:itemCount="20"
         android:layout_marginTop="16dp"
         tools:listitem="@layout/item_ads"
-        android:layout_marginBottom="32dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/search_edit"
         app:layout_constraintStart_toStartOf="parent"

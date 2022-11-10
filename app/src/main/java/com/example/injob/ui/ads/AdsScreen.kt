@@ -15,9 +15,7 @@ import com.example.injob.R
 import com.example.injob.data.db.AdEntity
 import com.example.injob.data.db.RoomSearchDb
 import com.example.injob.databinding.AdsScreenBinding
-import com.example.injob.ui.search.SearchScreen
-import com.example.injob.ui.search.viewmodel.SearchFactory
-import com.example.injob.ui.search.viewmodel.SearchViewModel
+import com.example.injob.ui.search.screen.SearchScreen
 import com.example.injob.utils.constans.Constans.MIMETYPE_IMAGES
 import com.example.injob.utils.extensions.navigateToFragment
 

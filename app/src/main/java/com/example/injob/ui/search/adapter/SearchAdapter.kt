@@ -5,10 +5,13 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.FragmentTransaction
 import androidx.recyclerview.widget.RecyclerView
 import com.example.injob.R
 import com.example.injob.data.db.AdEntity
 import com.example.injob.databinding.ItemAdsBinding
+import com.example.injob.ui.search.bottomshit.SearchBottomSheetDialog
+import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.bottomsheet.BottomSheetDialog
 
 class SearchAdapter() : RecyclerView.Adapter<SearchAdapter.SearchViewHolder>() {
@@ -48,7 +51,7 @@ class SearchAdapter() : RecyclerView.Adapter<SearchAdapter.SearchViewHolder>() {
         private val tvDescription = binding.itemDescription
         private val tvPayment = binding.itemPayment
         private val tvLocation = binding.itemLocation
-        private val tvImage = binding.itemImage
+        private val ivImage = binding.itemImage
 
         fun bind(data: AdEntity) {
             tvTitle.text = data.title
@@ -56,7 +59,7 @@ class SearchAdapter() : RecyclerView.Adapter<SearchAdapter.SearchViewHolder>() {
             tvPayment.text = data.payment
             tvLocation.text = data.location
             Log.e("ERROR", data.image)
-            tvImage.setImageURI(Uri.parse(data.image))
+            ivImage.setImageURI(Uri.parse(data.image))
         }
     }
 }

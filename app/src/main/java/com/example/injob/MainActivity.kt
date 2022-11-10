@@ -11,7 +11,7 @@ import com.example.injob.ui.ads.AdsScreen
 import com.example.injob.ui.favorites.FavoriteScreen
 import com.example.injob.ui.profile.ProfileScreen
 import com.example.injob.ui.responses.ResponseScreen
-import com.example.injob.ui.search.SearchScreen
+import com.example.injob.ui.search.screen.SearchScreen
 import com.example.injob.ui.splash.SplashScreen
 import com.example.injob.utils.extensions.navigateToFragment
 
@@ -29,6 +29,7 @@ class MainActivity : AppCompatActivity() {
 
         Handler(Looper.getMainLooper()).postDelayed({ binding?.bottomNavigationBar?.visibility = View.VISIBLE
         }, 2500)
+
 
 
 
