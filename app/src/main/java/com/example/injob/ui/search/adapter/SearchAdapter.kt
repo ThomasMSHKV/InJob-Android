@@ -1,18 +1,14 @@
 package com.example.injob.ui.search.adapter
 
 import android.net.Uri
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.FragmentTransaction
+import androidx.core.app.ActivityCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.example.injob.R
 import com.example.injob.data.db.AdEntity
 import com.example.injob.databinding.ItemAdsBinding
-import com.example.injob.ui.search.bottomshit.SearchBottomSheetDialog
-import com.google.android.material.bottomsheet.BottomSheetBehavior
-import com.google.android.material.bottomsheet.BottomSheetDialog
 
 class SearchAdapter(private val launchBottomSheet: () -> Unit) : RecyclerView.Adapter<SearchAdapter.SearchViewHolder>() {
 
@@ -36,6 +32,14 @@ class SearchAdapter(private val launchBottomSheet: () -> Unit) : RecyclerView.Ad
         }
         holder.binding.contactsBtn.setOnClickListener {
             launchBottomSheet.invoke()
+        }
+        holder.binding.itemFavoriteBtn.setOnClickListener { imageView ->
+            imageView.background = holder.binding.root.let {
+                ActivityCompat.getDrawable(
+                    holder.binding.root.context,
+                    R.drawable.ic_favorite_active
+                )
+            }
         }
 
         holder.bind(listOfAds[position])
