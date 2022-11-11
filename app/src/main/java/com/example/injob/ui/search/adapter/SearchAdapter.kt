@@ -14,7 +14,7 @@ import com.example.injob.ui.search.bottomshit.SearchBottomSheetDialog
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.bottomsheet.BottomSheetDialog
 
-class SearchAdapter() : RecyclerView.Adapter<SearchAdapter.SearchViewHolder>() {
+class SearchAdapter(private val launchBottomSheet: () -> Unit) : RecyclerView.Adapter<SearchAdapter.SearchViewHolder>() {
 
     var listOfAds = listOf<AdEntity>()
 
@@ -35,7 +35,7 @@ class SearchAdapter() : RecyclerView.Adapter<SearchAdapter.SearchViewHolder>() {
             holder.binding.respondedBtn.visibility = View.VISIBLE
         }
         holder.binding.contactsBtn.setOnClickListener {
-
+            launchBottomSheet.invoke()
         }
 
         holder.bind(listOfAds[position])
@@ -58,8 +58,12 @@ class SearchAdapter() : RecyclerView.Adapter<SearchAdapter.SearchViewHolder>() {
             tvDescription.text = data.description
             tvPayment.text = data.payment
             tvLocation.text = data.location
-            Log.e("ERROR", data.image)
-            ivImage.setImageURI(Uri.parse(data.image))
+
+            if (data.imageIsChosen) {
+                ivImage.setImageURI(Uri.parse(data.image))
+            } else {
+                ivImage.setImageResource(R.drawable.picture_placeholder)
+            }
         }
     }
 }

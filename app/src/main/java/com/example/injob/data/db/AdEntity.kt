@@ -9,6 +9,7 @@ import java.net.URI
 data class AdEntity(
     @PrimaryKey(autoGenerate = true) @ColumnInfo(name = "id") val id : Long = 0 ,
     @ColumnInfo(name = "image") val image: String,
+    @ColumnInfo(name = "imageIsChosen") val imageIsChosen: Boolean,
     @ColumnInfo(name = "title") val title: String,
     @ColumnInfo(name = "description") val description: String,
     @ColumnInfo(name = "payment") val payment: String,

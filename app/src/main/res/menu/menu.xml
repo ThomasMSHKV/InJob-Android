@@ -3,13 +3,13 @@
     <item android:id="@+id/searchFragment"
         android:title="Поиск"
         android:enabled="true"
-        android:iconTint="@color/black"
+        android:iconTint="@color/burgundy"
         android:icon="@drawable/ic_search" />
 
     <item android:id="@+id/favoriteFragment"
         android:title="Избранное"
         android:enabled="true"
-        android:iconTint="@color/black"
+        android:iconTint="@color/burgundy"
         android:icon="@drawable/ic_heart" />
 
     <item android:id="@+id/addPostFragment"
@@ -21,13 +21,13 @@
     <item android:id="@+id/responsesFragment"
         android:title="Отклики"
         android:enabled="true"
-        android:iconTint="@color/black"
+        android:iconTint="@color/burgundy"
         android:icon="@drawable/ic_responses" />
 
     <item android:id="@+id/profileFragment"
         android:title="Профиль"
         android:enabled="true"
-        android:iconTint="@color/black"
+        android:iconTint="@color/burgundy"
         android:icon="@drawable/ic_profile" />
 
 </menu>

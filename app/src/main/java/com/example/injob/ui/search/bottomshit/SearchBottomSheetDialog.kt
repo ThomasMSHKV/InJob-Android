@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import com.example.injob.R
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 
-class SearchBottomSheetDialog :BottomSheetDialogFragment() {
+class SearchBottomSheetDialog : BottomSheetDialogFragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater,

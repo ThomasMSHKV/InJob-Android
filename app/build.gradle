@@ -54,6 +54,10 @@ dependencies {
     // Saved state module for ViewModel
     implementation("androidx.lifecycle:lifecycle-viewmodel-savedstate:$lifecycle_version")
 
+    //RoundedImage
+    implementation 'com.makeramen:roundedimageview:2.3.0'
+
+
     //CircleImageview
     implementation 'de.hdodenhof:circleimageview:3.1.0'
 

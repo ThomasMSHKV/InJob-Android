@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.MotionEvent
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -23,8 +24,7 @@ import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 
 class SearchScreen : Fragment() {
 
-    private val bottomSheetDialog: SearchBottomSheetDialog? = null
-    private val searchViewHolder: SearchAdapter.SearchViewHolder? = null
+
     private var _binding: SearcheScreenBinding? = null
     private val binding get() = _binding!!
     private val viewModel by viewModels<SearchViewModel> {
@@ -50,7 +50,14 @@ class SearchScreen : Fragment() {
     }
 
     private fun initAdapter() {
-        searchAdapter = SearchAdapter()
+        searchAdapter = SearchAdapter {
+            val dialog = BottomSheetDialog(requireContext())
+            val view = layoutInflater.inflate(R.layout.search_bottom_sheet_dialog, null)
+            dialog.setCancelable(true)
+            dialog.setCanceledOnTouchOutside(true)
+            dialog.setContentView(view)
+            dialog.show()
+        }
         viewModel.getAllAds()?.let { searchAdapter?.setListData(it) }
         binding.recyclerViewSearch.apply {
             adapter = searchAdapter

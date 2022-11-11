@@ -1,32 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:id="@+id/fragmentContainer"
     android:layout_above="@id/bottom_navigationBar"
-    android:orientation="vertical"
+    android:layout_height="match_parent"
     tools:context=".MainActivity">
-
-    <FrameLayout
-        android:id="@+id/fragmentContainer"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="0.92" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigationBar"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_gravity="bottom"
-        android:layout_weight="0.08"
+        android:layout_height="60dp"
         android:background="@color/gray"
-        android:elevation="0dp"
-        app:itemIconTint="@color/black"
-        app:itemTextColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        android:elevation="0dp"
+        app:itemIconTint="@color/burgundy"
+        app:itemTextColor="@color/burgundy"
         app:menu="@menu/menu" />
 
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
