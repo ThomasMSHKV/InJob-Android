@@ -41,7 +41,6 @@
             android:layout_height="36dp"
             android:layout_marginHorizontal="16dp"
             android:background="@drawable/btn_add_ad_ads_screen_inactive_background"
-            android:backgroundTint="@color/black"
             android:text="@string/btn_add_picture_ads_screen_label"
             android:textAllCaps="false"
             android:textColor="@color/white"
