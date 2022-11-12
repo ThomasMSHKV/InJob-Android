@@ -7,7 +7,6 @@ import kotlinx.coroutines.*
 
 class ProfileViewModel(private val adDao: AdDao): ViewModel() {
 
-
     fun getAd(id: Long): AdEntity {
         val ads = CoroutineScope(Dispatchers.IO).async {
             adDao.getAd(id)

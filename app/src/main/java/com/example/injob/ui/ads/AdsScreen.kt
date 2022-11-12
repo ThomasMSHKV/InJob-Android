@@ -1,7 +1,8 @@
 package com.example.injob.ui.ads
 
+import android.app.Activity.RESULT_OK
+import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -18,7 +19,7 @@ import com.example.injob.data.db.AdEntity
 import com.example.injob.data.db.RoomSearchDb
 import com.example.injob.databinding.AdsScreenBinding
 import com.example.injob.ui.search.screen.SearchScreen
-import com.example.injob.utils.constans.Constans.MIMETYPE_IMAGES
+import com.example.injob.utils.constans.Constans.IMAGE_REQUEST_CODE
 import com.example.injob.utils.extensions.navigateToFragment
 
 class AdsScreen : Fragment() {
@@ -27,12 +28,6 @@ class AdsScreen : Fragment() {
     private val binding get() = _binding!!
 
     private var currentImage: String? = null
-
-    private val pickImage: ActivityResultLauncher<String> =
-        registerForActivityResult(ActivityResultContracts.GetContent()) { contentUri ->
-            binding.ivPictureAd.load(contentUri)
-            currentImage = contentUri.toString()
-        }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -52,6 +47,26 @@ class AdsScreen : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         setFieldsChecking()
         setClickListeners()
+    }
+
+    @Deprecated("Deprecated in Java")
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if (requestCode == IMAGE_REQUEST_CODE && resultCode == RESULT_OK) {
+            binding.ivPictureAd.load(data?.data)
+            data?.data?.let { requireActivity()
+                .contentResolver.takePersistableUriPermission(it,
+                    Intent.FLAG_GRANT_READ_URI_PERMISSION
+                            or Intent.FLAG_GRANT_WRITE_URI_PERMISSION
+                ) }
+            currentImage = data?.data.toString()
+        }
+    }
+
+    private fun pickImageFromGallery() {
+        val intent = Intent(Intent.ACTION_OPEN_DOCUMENT)
+        intent.type = "image/*"
+        startActivityForResult(intent, IMAGE_REQUEST_CODE)
     }
 
     private fun checkFieldsBeforeActivatingButton() {
@@ -105,7 +120,7 @@ class AdsScreen : Fragment() {
             requireActivity().supportFragmentManager.navigateToFragment(SearchScreen())
         }
         binding.btnAddPicture.setOnClickListener {
-            pickImage.launch(MIMETYPE_IMAGES)
+            pickImageFromGallery()
         }
     }
 }

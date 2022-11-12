@@ -2,7 +2,7 @@
     <string name="app_name">InJob</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="FAQ">   О нас</string>
+    <string name="FAQ">   О приложении</string>
     <string name="my_ads">   Мои объявления</string>
 
     <string name="tv_category_name_ads_screen_label">Название / категория</string>
@@ -12,8 +12,9 @@
     <string name="btn_add_ad_ads_screen_label">Добавить объявление</string>
     <string name="btn_add_picture_ads_screen_label">Добавить фото</string>
     <string name="min_fin">МИНИСТЕРСТВО ПРОМЫШЛЕННОСТИ И ЦИФРОВОГО РАЗВИТИЯ РЕСПУБЛИКИ ИНГУШЕТИЯ</string>
-    <string name="faq_text">Мы команда Android и iOS разработчиков Мерешков Магомед, Мерешков Амин, Чаниев Амин, подготовили прототип приложение для хакатона, который устраивает МИНИСТЕРСТВО ПРОМЫШЛЕННОСТИ И ЦИФРОВОГО РАЗВИТИЯ РЕСПУБЛИКИ ИНГУШЕТИЯ на тему: Полезный сервис для Республики Ингушетия.</string>
+    <string name="faq_text">"Мы - команда Android и iOS разработчиков:\nМерешков Магомед, \nМерешков Магомед-Амин, \nЧаниев Магомед-Амин. \nПодготовили прототип приложения для хакатона, который устраивает Министерство промышленности и цифрового развития Республики Ингушетия, на тему:\n «Разработка полезного сервиса для Республики Ингушетия»."</string>
     <string name="myAds">Мои объявления</string>
     <string name="favorite_text">Избранное</string>
+    <string name="responses_text">Отклики</string>
 
 </resources>

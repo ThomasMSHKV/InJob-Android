@@ -2,32 +2,18 @@ package com.example.injob.ui.search.screen
 
 import android.os.Bundle
 import android.view.LayoutInflater
-import android.view.MotionEvent
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import android.widget.EditText
-import android.widget.SearchView
-import androidx.core.widget.addTextChangedListener
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.example.injob.R
-import com.example.injob.data.db.AdEntity
 import com.example.injob.data.db.RoomSearchDb
-import com.example.injob.databinding.ItemAdsBinding
 import com.example.injob.databinding.SearcheScreenBinding
 import com.example.injob.ui.search.adapter.SearchAdapter
-import com.example.injob.ui.search.bottomshit.SearchBottomSheetDialog
 import com.example.injob.ui.search.viewmodel.SearchFactory
 import com.example.injob.ui.search.viewmodel.SearchViewModel
-import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.bottomsheet.BottomSheetDialog
-import com.google.android.material.bottomsheet.BottomSheetDialogFragment
-import kotlinx.coroutines.*
-import java.util.*
-import kotlin.collections.ArrayList
 
 class SearchScreen : Fragment() {
 
@@ -55,7 +41,8 @@ class SearchScreen : Fragment() {
     }
 
     private fun initAdapter() {
-        searchAdapter = SearchAdapter {
+        searchAdapter = SearchAdapter()
+        searchAdapter?.launchBottomSheet = {
             val dialog = BottomSheetDialog(requireContext())
             val view = layoutInflater.inflate(R.layout.search_bottom_sheet_dialog, null)
             dialog.setCancelable(true)
@@ -63,11 +50,23 @@ class SearchScreen : Fragment() {
             dialog.setContentView(view)
             dialog.show()
         }
+        searchAdapter?.launchAdsLikeWasClicked = { adsPosition ->
+            val ad = viewModel.getAllAds()!![adsPosition]
+            if (ad.isLiked == false) ad.isLiked = true
+            else ad.isLiked = false
+            viewModel.updateAd(ad
+            )
+        }
+        searchAdapter?.launchAdWasResponded = { adsPosition ->
+            val ad = viewModel.getAllAds()!![adsPosition]
+            if (ad.isResponded == false) ad.isResponded = true
+            else ad.isResponded = false
+            viewModel.updateAd(ad)
+        }
         viewModel.getAllAds()?.let { searchAdapter?.setListData(it) }
         binding.recyclerViewSearch.apply {
             adapter = searchAdapter
             layoutManager = LinearLayoutManager(activity)
         }
     }
-
 }

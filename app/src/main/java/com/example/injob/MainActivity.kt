@@ -27,11 +27,9 @@ class MainActivity : AppCompatActivity() {
 
         binding?.bottomNavigationBar?.visibility = View.GONE
 
-        Handler(Looper.getMainLooper()).postDelayed({ binding?.bottomNavigationBar?.visibility = View.VISIBLE
+        Handler(Looper.getMainLooper()).postDelayed({
+            binding?.bottomNavigationBar?.visibility = View.VISIBLE
         }, 2500)
-
-
-
 
         binding?.bottomNavigationBar?.setOnItemSelectedListener {
             when (it.itemId) {
@@ -53,7 +51,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onDestroy() {
-        super.onDestroy()
         binding = null
+
+        super.onDestroy()
     }
 }

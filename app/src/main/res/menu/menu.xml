@@ -10,7 +10,7 @@
         android:title="Избранное"
         android:enabled="true"
         android:iconTint="@color/burgundy"
-        android:icon="@drawable/ic_heart" />
+        android:icon="@drawable/ic_favorite_active" />
 
     <item android:id="@+id/addPostFragment"
         android:title="Добавить"
