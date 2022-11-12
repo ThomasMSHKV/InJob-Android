@@ -1,6 +1,10 @@
 package com.example.injob.ui.search.viewmodel
 
+import android.content.res.Resources
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
+import androidx.room.Query
 import com.example.injob.data.db.AdDao
 import com.example.injob.data.db.AdEntity
 import kotlinx.coroutines.*

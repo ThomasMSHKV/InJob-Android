@@ -6,11 +6,15 @@ import android.view.MotionEvent
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.EditText
+import android.widget.SearchView
+import androidx.core.widget.addTextChangedListener
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.injob.R
+import com.example.injob.data.db.AdEntity
 import com.example.injob.data.db.RoomSearchDb
 import com.example.injob.databinding.ItemAdsBinding
 import com.example.injob.databinding.SearcheScreenBinding
@@ -21,6 +25,9 @@ import com.example.injob.ui.search.viewmodel.SearchViewModel
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
+import kotlinx.coroutines.*
+import java.util.*
+import kotlin.collections.ArrayList
 
 class SearchScreen : Fragment() {
 
@@ -45,7 +52,6 @@ class SearchScreen : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initAdapter()
-
     }
 
     private fun initAdapter() {

@@ -38,8 +38,11 @@ class SearchAdapter(private val launchBottomSheet: () -> Unit) : RecyclerView.Ad
                 ActivityCompat.getDrawable(
                     holder.binding.root.context,
                     R.drawable.ic_favorite_active
+
+
                 )
             }
+
         }
 
         holder.bind(listOfAds[position])

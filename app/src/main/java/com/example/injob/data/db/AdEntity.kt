@@ -15,3 +15,4 @@ data class AdEntity(
     @ColumnInfo(name = "payment") val payment: String,
     @ColumnInfo(name = "location") val location: String
 )
+
