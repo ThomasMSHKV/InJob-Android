@@ -26,7 +26,6 @@ class AdsScreen : Fragment() {
 
     private var _binding: AdsScreenBinding? = null
     private val binding get() = _binding!!
-
     private var currentImage: String? = null
 
     override fun onCreateView(

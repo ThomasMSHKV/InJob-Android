@@ -54,7 +54,8 @@ class SearchScreen : Fragment() {
             val ad = viewModel.getAllAds()!![adsPosition]
             if (ad.isLiked == false) ad.isLiked = true
             else ad.isLiked = false
-            viewModel.updateAd(ad
+            viewModel.updateAd(
+                ad
             )
         }
         searchAdapter?.launchAdWasResponded = { adsPosition ->

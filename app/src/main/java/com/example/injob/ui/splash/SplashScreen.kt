@@ -11,13 +11,9 @@ import com.example.injob.utils.extensions.navigateToFragment
 
 class SplashScreen : Fragment(R.layout.splash_screen) {
 
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         Handler(Looper.getMainLooper()).postDelayed({
             requireActivity().supportFragmentManager.navigateToFragment(SearchScreen())
         }, 2500)
-
     }
-
-
 }

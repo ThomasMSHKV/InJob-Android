@@ -15,7 +15,7 @@
     <item android:id="@+id/addPostFragment"
         android:title="Добавить"
         android:enabled="true"
-        android:iconTint="@color/black"
+        android:iconTint="@color/burgundy"
         android:icon="@drawable/ic_add_post" />
 
     <item android:id="@+id/responsesFragment"
